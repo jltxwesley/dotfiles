@@ -1,0 +1,48 @@
+[user]
+	name = Wesley Zhang
+	email = jltxwesley@gmail.com
+[core]
+	excludesfile = /Users/wesleyzhang/.gitignore_global
+	autocrlf = false
+	safecrlf = true
+	editor = /usr/bin/vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Volumes/SourceTree/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+  ui = true
+  diff = auto
+  status = auto
+
+[color "diff"]
+  meta = cyan
+  frag = magenta
+  old = red
+  new = green
+
+[color "status"]
+  added = green
+  changed = red
+  untracked = cyan
+
+[format]
+  pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+
+[alias]
+  aa = add --all
+  di = diff
+  co = checkout
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%Cyellow%h %Cgreen%ad | %Creset%s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  graph = log --graph --pretty=format:\"%Cyellow%h%Cgreen %an%Creset: %s\"
+  lc = log ORIG_HEAD.. --stat --no-merges
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
+  lt = log --graph --oneline --decorate --all
