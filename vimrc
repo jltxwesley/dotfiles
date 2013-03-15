@@ -1,4 +1,4 @@
-set nocompatible															" choose no campatibility with legacy vi
+set nocompatible                              " choose no campatibility with legacy vi
 set t_Co=256                                  " 256-color terminal
 
 syntax on
@@ -7,15 +7,15 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 colorscheme railscasts
 
 set encoding=utf-8
-set showcmd																		" display incomplete(partial) commands in status line
-set showmatch 																" show matching brackets
-filetype plugin indent on											" load file type plugins + indentation
+set showcmd                                   " display incomplete(partial) commands in status line
+set showmatch                                 " show matching brackets
+filetype plugin indent on                     " load file type plugins + indentation
 set mouse=a
 
 "" Whitespace
-set nowrap																		" dont' wrap lines
-set tabstop=2 shiftwidth=2										" a tab is two spaces
-set expandtab  																" use spaces, not tabs
+set nowrap                                    " dont' wrap lines
+set tabstop=2 shiftwidth=2                    " a tab is two spaces
+set expandtab                                 " use spaces, not tabs
 set wildmode=list:full                        " tab completion done better
 
 " Override tab settings for php
@@ -24,12 +24,12 @@ augroup filetype_php
   autocmd FileType php setlocal noexpandtab shiftwidth=2 tabstop=2
 augroup END
 
-set ruler             												" show the line number on the bar
-set number																		" line numbser		
+set ruler                                     " show the line number on the bar
+set number                                    " line numbser
 set title                                     " show filename in status bar
-set more               												" use more prompt
-set autoread            											" watch for file changes
-set hidden																		" hide buffers when they are abandoned - allow opening new files while edits are kept
+set more                                      " use more prompt
+set autoread                                  " watch for file changes
+set hidden                                    " hide buffers when they are abandoned - allow opening new files while edits are kept
 set ttyfast                                   " let vim do more at once, with a modern terminal
 set showmode                                  " alwasy show current mode in status bar
 
@@ -42,10 +42,10 @@ set laststatus=2                              " always show the status line
 set autoread                                  " instead of prompting to load changed file, just load it
 
 "" Searching
-set hlsearch																	" highlight matches
-set incsearch																	" incremental searching
-set ignorecase          											" do case insensitive matching
-set smartcase           											" do smart case matching...unless they contain at least one capital letter
+set hlsearch                                  " highlight matches
+set incsearch                                 " incremental searching
+set ignorecase                                " do case insensitive matching
+set smartcase                                 " do smart case matching...unless they contain at least one capital letter
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
