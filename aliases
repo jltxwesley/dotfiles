@@ -1,0 +1,9 @@
+alias t="tmux"
+alias ta="tmux a"
+alias tks="tmux kill-session -t"
+alias tkw="tmux kill-window -t"
+alias la="ls -a"
+alias ll="ls -al"
+alias rspec='rspec --color --tty'
+alias bx="bundle exec"
+
