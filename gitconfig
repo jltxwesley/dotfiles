@@ -1,17 +1,13 @@
 [user]
-	name = Wesley Zhang
-	email = jltxwesley@gmail.com
+  name = Wesley Zhang
+  email = jltxwesley@gmail.com
+
 [core]
-	excludesfile = /Users/wesleyzhang/.gitignore_global
-	autocrlf = false
-	safecrlf = true
-	editor = /usr/bin/vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Volumes/SourceTree/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  excludesfile = /Users/wesleyzhang/.gitignore_global
+  autocrlf = false
+  safecrlf = true
+  editor = /usr/bin/vim
+
 [color]
   ui = true
   diff = auto
@@ -29,7 +25,7 @@
   untracked = cyan
 
 [format]
-  pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+  pretty = "Commit:  %C(yellow)%H%nAuthor:   %C(green)%aN <%aE>%nDate:   (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
 
 [alias]
   aa = add --all
