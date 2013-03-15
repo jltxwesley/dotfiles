@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/wesleyzhang/Development/OS_Projects/discourse/config'
+let g:netrw_dirhist_2='/Users/wesleyzhang/RubyOnRails/RailsApps Tutorials/rails-stripe-membership-saas'
+let g:netrw_dirhist_3='/Users/wesleyzhang/Development/Rails-Examples/rails3-bootstrap-devise-cancan/features'
+let g:netrw_dirhist_4='/Users/wesleyzhang/.cache'
+let g:netrw_dirhist_5='/Users/wesleyzhang/.mocksmtp'
+let g:netrw_dirhist_6='/Users/wesleyzhang/.rvm'
