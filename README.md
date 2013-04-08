@@ -1,4 +1,4 @@
 myDotFiles
 ==========
 
-My personal dot fiels configuration 
+My personal dot files configuration 
