@@ -2,8 +2,7 @@ set nocompatible                              " choose no campatibility with leg
 set t_Co=256                                  " 256-color terminal
 
 syntax on
-call pathogen#infect()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+execute pathogen#infect()
 colorscheme railscasts
 
 set encoding=utf-8
