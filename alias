@@ -1,0 +1,45 @@
+alias c="clear"
+alias h="hisotry"
+alias server='ruby -run -e httpd . -p 5000'
+
+## show hidden files ##
+alias l.='ls -d .*'
+## show all files ##
+alias la="ls -a"
+## show all files with permission ##
+alias ll="ls -al"
+
+## a quick way to get out of current directory ##
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+## tmux ##
+alias t="tmux"
+alias ta="tmux a"
+alias tks="tmux kill-session -t"
+alias tkw="tmux kill-window -t"
+
+## Ruby On Rails ##
+alias puma="bundle exec puma"
+alias rspec="rspec --color --format doc"
+alias cu="cucumber --format progress"
+alias cucumber='cucumber -r features'
+#alias migrate='rake db:migrate; rake db:test:prepare'
+
+## Laravel
+alias ccpl="composer create-project laravel/laravel"
+alias migrate="php artisan migrate"
+alias refresh="php artisan migrate:refresh"
+alias reset="php artisan migrate:reset"
+alias rollback="php artisan migrate:rollback"
+alias publish="php artisan vendor:publish"
+alias seed="php artisan db:seed"
+alias routes="php artisan route:list"
+alias optimize="php artisan optimize"
+alias phpunit="vendor/bin/phpunit"
+alias phpspec="vendor/bin/phpspec"
+alias prettify="python -mjson.tool"
+alias codecept="vendor/bin/codecept"
+alias accpetance="php codecept.phar generate:cept acceptance"

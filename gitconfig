@@ -18,6 +18,7 @@
   frag = magenta
   old = red
   new = green
+  ignorecase = false
 
 [color "status"]
   added = green
