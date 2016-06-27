@@ -7,6 +7,7 @@
   autocrlf = false
   safecrlf = true
   editor = /usr/bin/vim
+  filemode = false
 
 [color]
   ui = true
