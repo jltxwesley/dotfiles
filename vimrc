@@ -47,6 +47,14 @@ set tabstop=2 shiftwidth=2                    " a tab is two spaces
 set expandtab                                 " use spaces, not tabs
 set wildmode=list:full                        " tab completion done better
 
+" Visuals
+set guifont=Fira_Code
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+
 " Override tab settings for php
 augroup filetype_php
   autocmd!
@@ -55,6 +63,7 @@ augroup END
 
 set ruler                                     " show the line number on the bar
 set number                                    " line numbser
+set linespace=13                              " Macvim-specific line-height
 set title                                     " show filename in status bar
 set more                                      " use more prompt
 set autoread                                  " watch for file changes
@@ -69,6 +78,20 @@ set eol                                       " force blank lines at the end of 
 set nobinary                                  " disallow assumption of binary (noeol) mode
 set laststatus=2                              " always show the status line
 set autoread                                  " instead of prompting to load changed file, just load it
+
+" With a map leader it's possible to do extra key combinations like <leader>w saves the current file
+let mapleader = ','
+let g:mapleader = ','
+
+" Mappings
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+nmap <Leader><space> :nohlsearch<cr>
+
+" Auto-Commands
+augroup autosourcing
+  autocmd!
+  autocmd BufWritePost .vimrc source %
+augroup END
 
 "" Searching
 set hlsearch                                  " highlight matches
@@ -134,15 +157,13 @@ endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" vim navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" With a map leader it's possible to do extra key combinations like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+" Split Management
+set splitbelow
+set splitright
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 
 " Easy escaping to normal model
 imap jj <esc>
