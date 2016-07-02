@@ -36,6 +36,8 @@ Plugin 'honza/vim-snippets'
 call vundle#end()
 filetype plugin indent on
 
+
+
 " Visuals
 set t_Co=256                                                " 256-color terminal
 "colorscheme solarized
@@ -66,12 +68,6 @@ set tabstop=2 shiftwidth=2                                  " a tab is two space
 set expandtab                                               " use spaces, not tabs
 set wildmode=list:full                                      " tab completion done better
 
-" Override tab settings for php
-augroup filetype_php
-  autocmd!
-  autocmd FileType php setlocal noexpandtab shiftwidth=4 tabstop=4
-augroup END
-
 set ruler                                                   " show the line number on the bar
 set number                                                  " line number
 set linespace=13                                            " Macvim-specific line-height
@@ -94,6 +90,8 @@ set hlsearch                                                " highlight matches
 set incsearch                                               " incremental searching
 set ignorecase                                              " do case insensitive matching
 set smartcase                                               " do smart case matching...unless they contain at least one capital letter
+
+
 
 " With a map leader it's possible to do extra key combinations like <leader>w saves the current file
 let mapleader = ','
@@ -119,6 +117,7 @@ nmap <Leader>f :tag<space>
 nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
 
+" Show hidden files
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_max_files = 50000
 let g:ctrlp_max_depth = 10
@@ -129,12 +128,19 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 nnoremap <C-@> :CtrlPClearAllCaches<CR>:CtrlP<CR>
 
 " Auto-Commands
+" Override tab settings for php
+augroup filetype_php
+  autocmd!
+  autocmd FileType php setlocal noexpandtab shiftwidth=4 tabstop=4
+augroup END
+
+" Auto soure vimrc file when it's saved
 augroup autosourcing
   autocmd!
   autocmd BufWritePost .vimrc source %
 augroup END
 
-" remove trailing space
+" Remove trailing space
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -161,3 +167,27 @@ nmap sp :split<cr>
 
 " Create/edit file in the current directory
 nmap :ed :edit %:p:h/
+
+"let g:airline#extensions#tabline#enabled = 1
+
+
+
+" PHP - Import classes (add use statements)
+function! IPhpInsertUse()
+  call PhpInsertUse()
+  call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+" PHP - Make class names full qulified
+function! IPhpExpandClass()
+  call PhpExpandClass()
+  call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
+" PHP- Sort existing use statements alphabetically
+autocmd FileType php inoremap <Leader>ns <Esc>:call PhpSortUse()<CR>
+autocmd FileType php noremap <Leader>ns :call PhpSortUse()<CR>
