@@ -1,6 +1,6 @@
 ## basic commands
 alias c="clear"
-alias h="hisotry"
+alias h="history"
 
 ## run buil-in web servers
 alias serverRuby='ruby -run -e httpd . -p 5000'

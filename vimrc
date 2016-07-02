@@ -17,9 +17,11 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-surround'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
 
 Plugin 'StanAngeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'pangloss/vim-javascript'
@@ -40,27 +42,27 @@ filetype plugin indent on
 
 " Visuals
 set t_Co=256                                                " 256-color terminal
-"colorscheme solarized
+colorscheme atom-dark
+syntax on
 set guifont=Fira_Code
-set guioptions-=l
+set guioptions-=l                                           " disable gui scrollbars.
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-"set guioptions-=e
-syntax on
+set guioptions-=e                                           " disable gui tabs
 set encoding=utf-8
 set showcmd                                                 " display incomplete(partial) commands in status line
 set showmatch                                               " show matching brackets
 set mouse=a
 set cursorline
 set backspace=indent,eol,start
-"set noerrorbells visualbell t_vb=                          "no bells
+set noerrorbells visualbell t_vb=                           " no bells
 
 " MacVim
-highlight LineNr guibg=bg
+hi LineNr guibg=bg
 "set foldcolumn=2
-"highlight foldcolumn guibg=bg
-"highlight vertsplit guifg=bg guibg=bg
+"hi foldcolumn guibg=bg
+"hi vertsplit guifg=bg guibg=bg                              " get rid of split borders
 
 " Whitespace
 set nowrap                                                  " dont' wrap lines
@@ -76,6 +78,7 @@ set more                                                    " use more prompt
 set hidden                                                  " hide buffers when they are abandoned - allow opening new files while edits are kept
 set ttyfast                                                 " let vim do more at once, with a modern terminal
 set showmode                                                " alwasy show current mode in status bar
+
 set nobackup
 set nowritebackup
 set noswapfile
@@ -91,6 +94,9 @@ set incsearch                                               " incremental search
 set ignorecase                                              " do case insensitive matching
 set smartcase                                               " do smart case matching...unless they contain at least one capital letter
 
+set autowriteall                                            " automatically write the file when switching buffers
+set complete=.,w,b,u                                        " set our desired autocompletion matching
+
 
 
 " With a map leader it's possible to do extra key combinations like <leader>w saves the current file
@@ -98,6 +104,7 @@ let mapleader = ','
 let g:mapleader = ','
 let g:bar_mode = 0                                          " keep track of the status bar highlight mode (optimization)
 let NERDTreeHijackNetrw = 0
+let g:airline#extensions#tabline#enabled = 1
 
 " Mappings
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
@@ -168,8 +175,6 @@ nmap sp :split<cr>
 " Create/edit file in the current directory
 nmap :ed :edit %:p:h/
 
-"let g:airline#extensions#tabline#enabled = 1
-
 
 
 " PHP - Import classes (add use statements)
@@ -191,3 +196,7 @@ autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
 " PHP- Sort existing use statements alphabetically
 autocmd FileType php inoremap <Leader>ns <Esc>:call PhpSortUse()<CR>
 autocmd FileType php noremap <Leader>ns :call PhpSortUse()<CR>
+
+" PHP-cs-fixer
+let g:php_cs_fixer_level = "psr2"
+nnoremap <silent><leader>pf :call PhpCsFixerFixDirectory()<CR>
