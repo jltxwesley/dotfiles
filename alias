@@ -1,6 +1,10 @@
+## basic commands
 alias c="clear"
 alias h="hisotry"
-alias server='ruby -run -e httpd . -p 5000'
+
+## run buil-in web servers
+alias serverRuby='ruby -run -e httpd . -p 5000'
+alias serverPhp='php -S localhost:8000'
 
 ## show hidden files ##
 alias l.='ls -d .*'
@@ -21,25 +25,27 @@ alias ta="tmux a"
 alias tks="tmux kill-session -t"
 alias tkw="tmux kill-window -t"
 
-## Ruby On Rails ##
-alias puma="bundle exec puma"
-alias rspec="rspec --color --format doc"
-alias cu="cucumber --format progress"
-alias cucumber='cucumber -r features'
-#alias migrate='rake db:migrate; rake db:test:prepare'
-
 ## Laravel
 alias ccpl="composer create-project laravel/laravel"
+
 alias migrate="php artisan migrate"
-alias refresh="php artisan migrate:refresh"
-alias reset="php artisan migrate:reset"
-alias rollback="php artisan migrate:rollback"
-alias publish="php artisan vendor:publish"
 alias seed="php artisan db:seed"
-alias routes="php artisan route:list"
+alias rollback="php artisan migrate:rollback"
+alias refresh="php artisan migrate:refresh"
+
+alias controller="php artisan make:controller"
+alias model="php artisan make:model"
+alais migration="php artisan make:migration"
+alias request="php artisan make:request"
+alias middleware="php artisan make:middleware"
+alais cview="php artisan view:clear"
+
+alias publish="php artisan vendor:publish"
 alias optimize="php artisan optimize"
+alias tinker="php artisan tinker"
+
 alias phpunit="vendor/bin/phpunit"
 alias phpspec="vendor/bin/phpspec"
-alias prettify="python -mjson.tool"
 alias codecept="vendor/bin/codecept"
+alias prettify="python -mjson.tool"
 alias accpetance="php codecept.phar generate:cept acceptance"
