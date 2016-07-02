@@ -35,10 +35,10 @@ alias refresh="php artisan migrate:refresh"
 
 alias controller="php artisan make:controller"
 alias model="php artisan make:model"
-alais migration="php artisan make:migration"
+alias migration="php artisan make:migration"
 alias request="php artisan make:request"
 alias middleware="php artisan make:middleware"
-alais cview="php artisan view:clear"
+alias cview="php artisan view:clear"
 
 alias publish="php artisan vendor:publish"
 alias optimize="php artisan optimize"
