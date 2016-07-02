@@ -1,4 +1,3 @@
-*~
 # Compiled source #
 ###################
 *.com
@@ -7,6 +6,9 @@
 *.exe
 *.o
 *.so
+*.pyc
+/target
+/classes
 
 # Packages #
 ############
@@ -16,7 +18,7 @@
 *.dmg
 *.gz
 *.iso
-#*.jar
+*.jar
 *.rar
 *.tar
 *.zip
@@ -26,19 +28,32 @@
 *.log
 #*.sql
 *.sqlite
+*.cache
 
 # OS generated files #
 ######################
+.tmp
 .DS_Store
 .DS_Store?
-._*
 .Spotlight-V100
 .Trashes
-Icon?
 ehthumbs.db
 Thumbs.db
+# To ignore the icon hidden file added by Mac OS X when the folder has a custom icon,
+# instead of "Icon?" or "Icon\r", add TWO (sic) CRLF control characters.
+# (From http://blog.bitfluent.com/post/173740409/ignoring-icon-in-gitignore)
+# In vi(m) type CTRL-V + CTRL-M to insert one CRLF control character.
+# Those control characters will then appear in vim as "^M" in blue color to indicate that they are invisible.
+# (From http://www.bo.infn.it/alice/alice-doc/mll-doc/linux/vi-ex/node15.html)
+Icon
 
-# Vim backup
+# Backups #
+###########
+*.bak
+*.backup
+*.bak_20[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]
+
+# Vim swap files
 *.swp
 
 # php storm

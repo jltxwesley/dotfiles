@@ -5,7 +5,8 @@ Install oh-my-zsh:
 
 
 Symlink the files:
-*   **ln -s  ~/.dotfiles/vim ~/.vim** etc.
+*   **ln -s  ~/dotfiles/vim ~/.vim** etc etc etc.
+
 
 Install vim bundled plugins:
 *   Launch vim and run **:PluginInstall**
@@ -16,10 +17,3 @@ Install vim bundled plugins:
 To update vim bundled plugins:
 *   **cd ~/.dotfiles/vim/bundle/plugin_name**
 *   **git pull origin master**
-
-
-
-
-
-
-
