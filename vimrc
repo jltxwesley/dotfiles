@@ -42,7 +42,7 @@ filetype plugin indent on
 
 " Visuals
 set t_Co=256                                                " 256-color terminal
-colorscheme atom-dark
+"colorscheme atom-dark
 syntax on
 set guifont=Fira_Code
 set guioptions-=l                                           " disable gui scrollbars.
