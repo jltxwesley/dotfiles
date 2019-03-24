@@ -1,11 +1,11 @@
 [user]
-  name = Xu Zhang
-  email = jltxwesley@gmail.com
+	name = Xu Zhang
+	email = jltxwesley@gmail.com
 
 [core]
-  excludesfile = /Users/wesleyzhang/.gitignore_global
-  autocrlf = false
-  safecrlf = true
+	excludesfile = /Users/xuzhang/.gitignore_global
+	autocrlf = false
+	safecrlf = false
   editor = /usr/bin/vim
   filemode = false
 
@@ -42,3 +42,13 @@
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --numstat
   ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cgreen\\ [%cn]" --decorate --date=relative
   lt = log --graph --oneline --decorate --all
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/xuzhang/.stCommitMsg
+[rerere]
+	enabled = 1

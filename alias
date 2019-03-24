@@ -27,25 +27,25 @@ alias tkw="tmux kill-window -t"
 
 ## Laravel
 alias ccpl="composer create-project laravel/laravel"
-
-alias migrate="php artisan migrate"
-alias seed="php artisan db:seed"
-alias rollback="php artisan migrate:rollback"
-alias refresh="php artisan migrate:refresh"
-
-alias controller="php artisan make:controller"
-alias model="php artisan make:model"
-alias migration="php artisan make:migration"
-alias request="php artisan make:request"
-alias middleware="php artisan make:middleware"
-alias cview="php artisan view:clear"
-
-alias publish="php artisan vendor:publish"
-alias optimize="php artisan optimize"
-alias tinker="php artisan tinker"
-
-alias phpunit="vendor/bin/phpunit"
+alias p="vendor/bin/phpunit"
+alias pf="vendor/bin/phpunit --filter"
 alias phpspec="vendor/bin/phpspec"
 alias codecept="vendor/bin/codecept"
 alias prettify="python -mjson.tool"
 alias accpetance="php codecept.phar generate:cept acceptance"
+
+## Git
+alias nah="git reset --hard && git clean -df"
+
+### docker
+alias dc="docker-compose"
+alias dm="docker-machine"
+alias dcup="docker-compose up -d nginx mysql redis beanstalkd"
+alias dcupp="docker-compose up -d nginx postgres redis beanstalkd"
+alias dcbash="docker-compose exec --user=laradock workspace bash"
+
+dstop() { docker stop $(docker ps -a -q); }
+drm() { docker rm $(docker ps -a -q); }
+dri() { docker rmi $(docker images -q); }
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+

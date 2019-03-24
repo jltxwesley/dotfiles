@@ -58,3 +58,5 @@ Icon
 
 # php storm
 .idea
+
+.php_cs.cache
