@@ -29,5 +29,4 @@ Add alias:
 
 
 To update vim bundled plugins:
-*   **cd ~/.dotfiles/vim/bundle/plugin_name**
-*   **git pull origin master**
+*   Lunch vim and run **:PluginUpdate**
