@@ -1,11 +1,11 @@
 [user]
-	name = Xu Zhang
-	email = jltxwesley@gmail.com
+  name = Xu Zhang
+  email = jltxwesley@gmail.com
 
 [core]
-	excludesfile = /Users/xuzhang/.gitignore_global
-	autocrlf = false
-	safecrlf = false
+  excludesfile = /Users/xuzhang/.gitignore_global
+  autocrlf = false
+  safecrlf = false
   editor = /usr/bin/vim
   filemode = false
 
